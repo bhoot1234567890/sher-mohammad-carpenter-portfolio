@@ -8,21 +8,21 @@ export const Testimonials: React.FC = () => {
       name: 'Rajesh Kumar',
       location: 'Delhi',
       project: 'Modular Kitchen',
-      text: 'Sher Mohammad transformed our kitchen into a beautiful, functional space. His attention to detail and craftsmanship are exceptional. The modular kitchen he designed exceeded our expectations.',
+      text: 'Transformed our kitchen beautifully. Exceptional craftsmanship and attention to detail. Exceeded our expectations!',
       rating: 5
     },
     {
       name: 'Priya Sharma',
       location: 'Noida',
       project: 'Wardrobe Design',
-      text: 'We hired Sher for custom wardrobes in our bedroom. The quality of work, finish, and the way he maximized storage space is remarkable. Highly recommended!',
+      text: 'Quality work and finish are remarkable. The way he maximized storage space is incredible. Highly recommended!',
       rating: 5
     },
     {
       name: 'Amit Verma',
       location: 'Gurgaon',
       project: 'Wood Flooring',
-      text: 'Professional, punctual, and perfectionist - that\'s Sher Mohammad. The wood flooring work he did in our living room has received countless compliments from guests.',
+      text: 'Professional, punctual, and perfectionist. The flooring has received countless compliments from guests.',
       rating: 5
     }
   ];
@@ -39,6 +39,7 @@ export const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 150} direction="up">
               <div className="testimonial-card">
+                <div className="testimonial-decoration-top">"</div>
                 <div className="testimonial-rating">
                   {'★'.repeat(testimonial.rating)}
                 </div>
@@ -46,12 +47,20 @@ export const Testimonials: React.FC = () => {
                 <div className="testimonial-author">
                   <div className="author-avatar">
                     {testimonial.name.charAt(0)}
+                    <svg className="avatar-ring" width="60" height="60" viewBox="0 0 60 60">
+                      <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2" opacity="0.3"/>
+                    </svg>
                   </div>
                   <div className="author-info">
                     <h4>{testimonial.name}</h4>
                     <span>{testimonial.location}</span>
                     <small>Project: {testimonial.project}</small>
                   </div>
+                </div>
+                <div className="testimonial-decoration-bottom">
+                  <svg width="100" height="20" viewBox="0 0 100 20">
+                    <path d="M0,10 Q25,5 50,10 T100,10" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.2"/>
+                  </svg>
                 </div>
               </div>
             </ScrollReveal>

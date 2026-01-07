@@ -7,44 +7,49 @@ export const Services: React.FC = () => {
     {
       icon: '⌂',
       title: 'Modular Kitchens',
-      description: 'Custom-designed kitchens that blend functionality with aesthetics. From sleek modern designs to timeless classics, we create spaces that inspire culinary creativity.',
-      features: ['Custom Layouts', 'Premium Materials', 'Smart Storage', 'Modern Fixtures']
+      description: 'Custom designs blending functionality with aesthetics. Spaces that inspire culinary creativity.',
+      features: ['Custom Layouts', 'Smart Storage']
     },
     {
       icon: '◫',
       title: 'Wardrobes & Storage',
-      description: 'Maximize your space with intelligently designed wardrobes and storage solutions. Crafted to organize your belongings while adding elegance to your room.',
-      features: ['Walk-in Wardrobes', 'Sliding Doors', 'Built-in Units', 'Custom Compartments']
+      description: 'Intelligently designed storage solutions. Organized elegance that maximizes your space.',
+      features: ['Walk-in Wardrobes', 'Sliding Doors']
     },
     {
       icon: '⌶',
       title: 'Custom Furniture',
-      description: 'Bespoke furniture pieces crafted to your specifications. From beds to TV units, each piece is a unique expression of craftsmanship and style.',
-      features: ['Beds & Headboards', 'TV Units', 'Coffee Tables', 'Display Units']
+      description: 'Bespoke pieces crafted to your specifications. Unique expressions of style.',
+      features: ['Beds & Headboards', 'TV Units']
     },
     {
       icon: '⊟',
       title: 'Doors & Windows',
-      description: 'Handcrafted doors and windows that enhance your home\'s character. Traditional techniques meet modern design for lasting beauty and functionality.',
-      features: ['Panel Doors', 'French Windows', 'Sliding Systems', 'Decorative Frames']
+      description: 'Handcrafted pieces enhancing your home\'s character. Traditional techniques, modern design.',
+      features: ['Panel Doors', 'French Windows']
     },
     {
       icon: '▦',
       title: 'Wood Flooring',
-      description: 'Premium wood flooring solutions that bring warmth and elegance to any space. Professional installation with meticulous attention to detail.',
-      features: ['Hardwood Floors', 'Engineered Wood', 'Laminate Options', 'Finishing Services']
+      description: 'Premium flooring bringing warmth and elegance. Professional installation with precision.',
+      features: ['Hardwood Floors', 'Engineered Wood']
     },
     {
       icon: '⎔',
       title: 'PVC Panels',
-      description: 'Modern PVC panel installations for walls and ceilings. Durable, moisture-resistant, and available in various designs to suit your aesthetic.',
-      features: ['Wall Cladding', 'Ceiling Panels', 'Waterproof Designs', 'Easy Maintenance']
+      description: 'Modern wall and ceiling solutions. Durable, moisture-resistant, and elegant.',
+      features: ['Wall Cladding', 'Ceiling Panels']
     }
   ];
 
   return (
     <section id="services" className="services-section">
       <div className="container">
+        <div className="services-header-decoration">
+          <svg width="100" height="4" viewBox="0 0 100 4">
+            <line x1="0" y1="2" x2="100" y2="2" stroke="currentColor" strokeWidth="1" strokeDasharray="8 4"/>
+          </svg>
+        </div>
         <SectionTitle
           title="Services & Expertise"
           subtitle="Comprehensive carpentry solutions tailored to your needs"
@@ -74,6 +79,12 @@ export const Services: React.FC = () => {
 
         <ScrollReveal delay={600}>
           <div className="services-cta">
+            <div className="cta-decoration">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2"/>
+                <path d="M15 20 L20 25 L25 15" fill="none" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+            </div>
             <h3>Have a custom project in mind?</h3>
             <p>I specialize in bringing unique visions to life. Let's discuss your requirements.</p>
             <a href="#contact" className="btn-primary">

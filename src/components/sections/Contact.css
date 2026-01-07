@@ -41,6 +41,13 @@
   color: var(--text-primary);
 }
 
+.contact-header-decoration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--gold-muted);
+}
+
 .contact-intro {
   font-size: 1.125rem;
   line-height: 1.7;
@@ -222,4 +229,15 @@
 
 .contact-note .text-gold {
   font-size: 0.75rem;
+}
+
+/* Mobile: Hide working hours section */
+@media (max-width: 768px) {
+  .contact-hours {
+    display: none;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+  }
 }

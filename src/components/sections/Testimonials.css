@@ -42,14 +42,30 @@
 }
 
 .testimonial-card::before {
-  content: '"';
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-primary), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover::before {
+  transform: scaleX(1);
+}
+
+.testimonial-decoration-top {
   position: absolute;
   top: 1.5rem;
-  left: 2rem;
+  right: 2rem;
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--gold-muted);
-  opacity: 0.3;
+  opacity: 0.2;
   line-height: 1;
 }
 
@@ -93,6 +109,16 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--charcoal-darkest);
+  position: relative;
+}
+
+.avatar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold-muted);
+  animation: rotate 10s linear infinite;
 }
 
 .author-info {
@@ -123,6 +149,12 @@
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.testimonial-decoration-bottom {
+  margin-top: 1rem;
+  color: var(--gold-muted);
+  opacity: 0.5;
 }
 
 .testimonials-trust {

@@ -12,6 +12,29 @@ export const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isMenuOpen]);
+
   const navLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
@@ -24,6 +47,15 @@ export const Navigation: React.FC = () => {
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
+      {/* Dark overlay */}
+      {isMenuOpen && (
+        <div
+          className="nav-overlay"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       <div className="container">
         <div className="nav-content">
           <a href="#hero" className="nav-logo">
@@ -42,6 +74,16 @@ export const Navigation: React.FC = () => {
           </button>
 
           <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+            {/* Close button inside menu */}
+            {isMenuOpen && (
+              <button
+                className="nav-close-btn"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <span className="close-icon">×</span>
+              </button>
+            )}
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a

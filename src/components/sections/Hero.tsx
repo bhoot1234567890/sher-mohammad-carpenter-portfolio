@@ -25,8 +25,7 @@ export const Hero: React.FC = () => {
 
           <ScrollReveal delay={600} direction="right">
             <p className="hero-subtitle">
-              Transforming spaces through exceptional carpentry and timeless craftsmanship.
-              Specializing in custom modular kitchens, wardrobes, furniture, and architectural woodwork.
+              Transforming spaces with exceptional carpentry. Custom kitchens, wardrobes, and furniture crafted to perfection.
             </p>
           </ScrollReveal>
 

@@ -4,6 +4,13 @@
   position: relative;
 }
 
+.services-header-decoration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--gold-muted);
+}
+
 .services-section::before {
   content: '';
   position: absolute;
@@ -140,6 +147,15 @@
   background: var(--charcoal-darkest);
   border: 1px solid var(--charcoal-medium);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta-decoration {
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
 }
 
 .services-cta::before,
@@ -177,4 +193,15 @@
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 2rem;
+}
+
+/* Mobile: Hide feature lists */
+@media (max-width: 768px) {
+  .service-features {
+    display: none;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
 }

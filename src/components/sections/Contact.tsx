@@ -40,10 +40,15 @@ export const Contact: React.FC = () => {
         <div className="contact-content">
           <ScrollReveal delay={200} direction="left">
             <div className="contact-info">
+              <div className="contact-header-decoration">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                  <rect x="10" y="10" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2" opacity="0.3"/>
+                  <path d="M20 40 L40 20 L60 40 L40 60 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+                </svg>
+              </div>
               <h3>Contact Information</h3>
               <p className="contact-intro">
-                Ready to transform your space with exceptional carpentry? Reach out through any of these
-                channels, and I'll get back to you promptly.
+                Ready to transform your space? Reach out—I'll respond promptly.
               </p>
 
               <div className="contact-details">

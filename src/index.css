@@ -321,3 +321,43 @@ section {
   width: 100%;
   min-height: 100vh;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Reduce section padding on mobile */
+  section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Smaller typography for mobile */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Hide decorative elements on mobile */
+  .gold-line {
+    display: none;
+  }
+
+  .section-subtitle {
+    display: none;
+  }
+
+  /* Hide scroll indicator on mobile */
+  .scroll-indicator {
+    display: none;
+  }
+}

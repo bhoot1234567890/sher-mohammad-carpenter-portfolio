@@ -7,25 +7,25 @@ export const Process: React.FC = () => {
     {
       number: '01',
       title: 'Consultation',
-      description: 'We begin with a detailed discussion about your vision, requirements, budget, and timeline. Understanding your needs helps us create the perfect solution.',
+      description: 'Discussion of your vision, requirements, and budget to create the perfect solution.',
       icon: '💬'
     },
     {
       number: '02',
       title: 'Design',
-      description: 'Our team creates detailed designs and 3D visualizations. We review plans with you, make adjustments, and finalize every detail before production begins.',
+      description: 'Detailed plans and 3D visualizations reviewed together. Every detail finalized before production.',
       icon: '✎'
     },
     {
       number: '03',
       title: 'Craftsmanship',
-      description: 'Skilled artisans bring the design to life using premium materials and time-honored techniques. Every piece is crafted with precision and care.',
+      description: 'Skilled artisans bring designs to life using premium materials and time-honored techniques.',
       icon: '⚒'
     },
     {
       number: '04',
       title: 'Installation',
-      description: 'Professional installation ensures everything fits perfectly. We handle every detail, leaving you with a beautifully finished space ready to enjoy.',
+      description: 'Professional installation ensures everything fits perfectly. A beautifully finished space ready to enjoy.',
       icon: '✓'
     }
   ];
@@ -39,11 +39,20 @@ export const Process: React.FC = () => {
         />
 
         <div className="process-timeline">
+          {/* Timeline decorative line */}
+          <div className="timeline-decoration">
+            <svg width="100%" height="100" viewBox="0 0 400 100" preserveAspectRatio="none">
+              <path d="M0,50 Q100,20 200,50 T400,50" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="8 4" opacity="0.3"/>
+            </svg>
+          </div>
           {steps.map((step, index) => (
             <ScrollReveal key={index} delay={index * 150} direction="up">
               <div className={`process-step ${index % 2 === 0 ? 'step-left' : 'step-right'}`}>
                 <div className="step-connector"></div>
                 <div className="step-icon">
+                  <svg className="step-icon-bg" width="80" height="80" viewBox="0 0 80 80">
+                    <polygon points="40,5 75,75 5,75" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+                  </svg>
                   <span className="step-number text-gold">{step.number}</span>
                   <span className="step-emoji">{step.icon}</span>
                 </div>

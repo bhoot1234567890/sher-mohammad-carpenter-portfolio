@@ -1,73 +1,178 @@
-# React + TypeScript + Vite
+# Sher Mohammad | Master Carpenter Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A luxury, dark-themed portfolio website showcasing the exceptional carpentry work of Sher Mohammad, a master craftsman with 9+ years of experience in Delhi NCR.
 
-Currently, two official plugins are available:
+## ✨ Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[https://sher-mohammad-carpenter.pages.dev](https://sher-mohammad-carpenter.pages.dev)**
 
-## React Compiler
+## 🎨 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **64+ Portfolio Images** with AI-generated detailed descriptions
+- **Interactive Gallery** with category filters (Furniture, Kitchen, Wardrobes, Details)
+- **Image Modal Popups** - Click any image to view full details
+- **Luxury Dark Theme** with gold accents and warm traditional design
+- **Fully Responsive** - Works beautifully on all devices
+- **Smooth Animations** - Scroll-triggered fade-ins and transitions
+- **Direct WhatsApp Contact** - Easy client communication
+- **SEO Optimized** - Proper meta tags and descriptions
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** with TypeScript
+- **Vite** - Fast build tool and dev server
+- **Custom CSS** - Luxury dark theme with gold accents
+- **react-intersection-observer** - Scroll animations
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+sher-mohammad-carpenter-portfolio/
+├── public/
+│   ├── images/                      # Portfolio images (64+ photos)
+│   └── image_analysis_results.json  # AI analysis data
+├── src/
+│   ├── components/
+│   │   ├── sections/                # Page sections
+│   │   │   ├── Hero.tsx            # Landing hero
+│   │   │   ├── About.tsx           # About/bio
+│   │   │   ├── Services.tsx        # Services offered
+│   │   │   ├── Gallery.tsx         # Image gallery
+│   │   │   ├── Testimonials.tsx    # Client reviews
+│   │   │   ├── Process.tsx         # Work process
+│   │   │   └── Contact.tsx         # Contact info
+│   │   └── ui/                      # Shared components
+│   │       ├── Navigation.tsx
+│   │       ├── Footer.tsx
+│   │       ├── ImageModal.tsx      # Image detail popup
+│   │       └── LazyImage.tsx       # Lazy-loaded images
+│   └── data/portfolioData.ts       # Type definitions
+└── CLAUDE.md                        # Developer documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### Development
+
+```bash
+npm run dev
+# Runs at http://localhost:5173/
+```
+
+### Build for Production
+
+```bash
+npm run build
+# Output: dist/
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## 📸 Adding New Images to Gallery
+
+1. **Add image file** to `public/images/`
+2. **Run AI analysis** to generate metadata (separate project using Mistral AI)
+3. **Update** `public/image_analysis_results.json` with new entry:
+   ```json
+   {
+     "filename": "your-image.jpg",
+     "timestamp": "2024-01-07T12:00:00Z",
+     "file_size": 123456,
+     "analysis": {
+       "image_type": "Full project view",
+       "primary_subject": "Description of what's shown",
+       "completion_stage": "Completed",
+       "technical_details": {
+         "materials": ["wood", "metal"],
+         "joinery_techniques": ["mortise and tenon"],
+         "construction_methods": ["hand assembly"]
+       },
+       "craftsmanship_quality": {
+         "precision": "High - details",
+         "surface_quality": "High - details",
+         "attention_to_detail": "High - details"
+       },
+       "design_elements": {
+         "style": "Modern",
+         "functional_features": ["feature1"],
+         "aesthetic_features": ["feature1"]
+       },
+       "portfolio_presentation": {
+         "best_use": "Hero image",
+         "accompanying_text": "2-3 sentence description",
+         "quality_rating": 9
+       }
+     },
+     "keywords": ["keyword1", "keyword2"]
+   }
+   ```
+4. **Rebuild and deploy**:
+   ```bash
+   npm run build
+   npx wrangler pages deploy dist --project-name=sher-mohammad-carpenter
+   ```
+
+## 🎨 Customization
+
+### Update Contact Information
+
+Edit `src/components/sections/Contact.tsx`:
+- Phone number
+- Email address
+- Location
+- Working hours
+
+### Update Services
+
+Edit `src/components/sections/Services.tsx` to modify service cards.
+
+### Modify Colors
+
+Edit `src/index.css` CSS variables:
+```css
+:root {
+  --gold-primary: #D4AF37;
+  --charcoal-darkest: #0D0D0D;
+  /* etc. */
+}
+```
+
+## 🌐 Deployment
+
+### Cloudflare Pages (Wrangler CLI)
+
+```bash
+# Build
+npm run build
+
+# Deploy
+npx wrangler pages deploy dist --project-name=sher-mohammad-carpenter
+```
+
+## 👤 Client Information
+
+**Sher Mohammad**
+Master Carpenter in Wood
+📍 Majnu Ka Tila, Delhi - 110054
+📞 +91 8527285231
+✉️ shermohammadtuku@gmail.com
+
+**Specializations**: Wood work, modular kitchens, wardrobes, beds, wood flooring, TV units, doors, windows, PVC panels, furniture repair
+
+## 📄 License
+
+This portfolio website was created for Sher Mohammad. All rights reserved.
+
+---
+
+Built with ❤️ using React + Vite + TypeScript

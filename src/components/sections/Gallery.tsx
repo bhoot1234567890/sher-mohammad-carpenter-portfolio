@@ -95,7 +95,7 @@ export const Gallery: React.FC = () => {
             <p>Loading gallery...</p>
           </div>
         ) : (
-          <ScrollReveal delay={400}>
+          <>
             <div className="gallery-grid">
               {sortedImages.map((image, index) => (
                 <div
@@ -140,13 +140,12 @@ export const Gallery: React.FC = () => {
                 </div>
               ))}
             </div>
-
             {sortedImages.length === 0 && (
               <div className="gallery-empty">
                 <p>No images found for this category.</p>
               </div>
             )}
-          </ScrollReveal>
+          </>
         )}
       </div>
 
